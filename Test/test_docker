@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Lancer le conteneur Docker sans l'option -t ou --tty
+sudo docker run -v /home/julien/1_Projets/B-PSU-200-LIL-2-1-42sh-enzo.boron:/usr/data -i epitechcontent/epitest-docker:latest << EOF
+
+# Commandes à exécuter à l'intérieur du conteneur Docker
+cd ..
+cd data
+make test
+cd Test
+./test.sh
+
+# Sortir du conteneur Docker
+exit
+
+EOF
